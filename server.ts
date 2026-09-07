@@ -46,6 +46,7 @@ import {
   TransboundaryBasinOverview
 } from './src/types';
 
+dotenv.config({ path: '.env.local' });
 dotenv.config();
 
 const app = express();
@@ -1932,7 +1933,8 @@ app.all('/api/*', (req, res) => {
 
 // --- VITE / STATIC SERVING ---
 async function start() {
-  if (process.env.NODE_ENV !== 'production') {
+  const isProduction = process.env.NODE_ENV === 'production' || __filename.endsWith('.cjs');
+  if (!isProduction) {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa'
