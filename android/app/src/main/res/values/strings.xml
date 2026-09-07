@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HAEWS Cảnh Báo Sớm</string>
+    <string name="title_activity_main">HAEWS Cảnh Báo Sớm</string>
+    <string name="package_name">vn.haews.canhbaosom</string>
+    <string name="custom_url_scheme">vn.haews.canhbaosom</string>
+</resources>

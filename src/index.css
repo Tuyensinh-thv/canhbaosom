@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  --color-hvu-primary: #005BAC;
+  --color-hvu-primary-dark: #003B73;
+  --color-hvu-digital: #0078D4;
+  --color-hvu-cyan: #00A6D6;
+  --color-hvu-gold: #F5B400;
+  --color-vietnam-red: #D71920;
+  --color-hvu-bg: #F5F8FC;
+  --color-hvu-surface: #FFFFFF;
+  --color-hvu-text: #172033;
+  --color-hvu-muted: #64748B;
+}
+
+:root {
+  --hvu-primary: #005BAC;
+  --hvu-primary-dark: #003B73;
+  --hvu-digital: #0078D4;
+  --hvu-cyan: #00A6D6;
+  --hvu-gold: #F5B400;
+  --vietnam-red: #D71920;
+  --hvu-bg: #F5F8FC;
+  --hvu-surface: #FFFFFF;
+  --hvu-text: #172033;
+  --hvu-muted: #64748B;
+}
+
+/* Mobile Safe Area Insets (iOS Notch & Dynamic Island, Android Navigation Bar) */
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pl-safe {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+.pr-safe {
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Custom scrollbars and styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.7);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 91, 172, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 91, 172, 0.6);
+}
+
+/* Tactical Map & Radar Animations */
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 4s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes tacticalPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(245, 180, 0, 0.4), inset 0 0 15px rgba(245, 180, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(245, 180, 0, 0.8), inset 0 0 25px rgba(245, 180, 0, 0.4);
+  }
+}
+
+.tactical-glow {
+  animation: tacticalPulseGlow 3s ease-in-out infinite;
+}
+
+/* Leaflet Custom Popups for Tactical Map */
+.leaflet-popup-content-wrapper {
+  background: rgba(11, 30, 54, 0.95) !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(0, 166, 214, 0.4) !important;
+  border-radius: 14px !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 91, 172, 0.3) !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(11, 30, 54, 0.95) !important;
+  border: 1px solid rgba(0, 166, 214, 0.4) !important;
+}
+
+/* Ensure Leaflet tiles and container are fully visible and not blocked by css */
+.leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  background: #e2e8f0 !important;
+  font-family: inherit !important;
+}
+
+.leaflet-tile {
+  max-width: none !important;
+  max-height: none !important;
+  visibility: visible !important;
+}
+
+.leaflet-tile-pane {
+  z-index: 2 !important;
+}
+
+.leaflet-overlay-pane {
+  z-index: 4 !important;
+}
+
+.leaflet-marker-pane {
+  z-index: 6 !important;
+}
+

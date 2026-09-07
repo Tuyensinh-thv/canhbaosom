@@ -1,0 +1,8 @@
+{
+  "name": "Hệ thống Cảnh báo sớm tích hợp AI",
+  "description": "Nền tảng Hỗ trợ Quyết định & Điều hành Tác chiến Ứng phó Thiên tai Toàn diện (Chỉ huy Tỉnh, Tác nghiệp, Hiện trường, Vòng đời Sự cố)",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
